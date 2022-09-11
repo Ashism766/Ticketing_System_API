@@ -5,9 +5,11 @@ const PORT = 8080;
 const PersonList = require('./p');
 const app = express();
 const { v4: uuidv4 } = require('uuid');
+const ejs = require('ejs');
 
-
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static('public'));
 
 app.listen(process.env.PORT||PORT, ()=>{
     console.log(`server is running on port ${PORT}`);
@@ -16,11 +18,12 @@ app.listen(process.env.PORT||PORT, ()=>{
 var i = 0;
 
 app.route("/").get((req, res)=>{
-    res.send("<h1> this is Home page of that API</h1>");
+
+    res.render("home");
 });
 
 app.route("/ticket").get((req, res)=>{
-    res.send("<h1>Ticket RESTapi </h1>");
+    res.send("<h1>TICKETING SYSTEM REST-API END_POINT</h1>");
 })
 .post((req, res)=>{
     
