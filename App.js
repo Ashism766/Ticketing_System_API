@@ -15,6 +15,9 @@ app.listen(process.env.PORT||PORT, ()=>{
 
 var i = 0;
 
+app.route("/").get((req, res)=>{
+    res.send("<h1> this is Home page of that API</h1>");
+});
 
 app.route("/ticket").get((req, res)=>{
     res.send("<h1>Ticket RESTapi </h1>");
