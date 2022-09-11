@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+
 const PORT = 8080;
 const PersonList = require('./p');
 const app = express();
